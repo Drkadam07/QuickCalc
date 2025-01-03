@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+#root {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* For larger devices (desktops and tablets), adjust as necessary */
+@media (min-width: 768px) {
+  #root {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* For smaller devices (mobile phones), adjust the padding */
+@media (max-width: 767px) {
+  #root {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

@@ -1,30 +1,22 @@
 import React from 'react';
 
-// Functional Card component
-export default function Card({ image, title, onButtonClick1, onButtonClick2 }) {
+export default function Card({ image, title, onCardClick, onButtonClick }) {
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
-      {/* Image Section */}
+    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white cursor-pointer" onClick={onCardClick}>
       <img className="w-full h-48 object-cover" src={image} alt={title} />
-
-      {/* Card Content */}
       <div className="px-6 py-4">
         <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
       </div>
 
-      {/* Button Section */}
-      <div className="px-6 pb-4 flex justify-between">
+      <div className="px-6 pb-4 flex justify-center">
         <button
-          onClick={onButtonClick1}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none"
+          onClick={(e) => {
+            e.stopPropagation(); 
+            onButtonClick();
+          }}
+          className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none"
         >
-          Button 1
-        </button>
-        <button
-          onClick={onButtonClick2}
-          className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none"
-        >
-          Button 2
+          Calculate
         </button>
       </div>
     </div>

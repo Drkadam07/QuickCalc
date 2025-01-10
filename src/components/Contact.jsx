@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { Field, Label, Switch } from '@headlessui/react'
 import Header from './Header'
-import Footer from './Footer'
+// import Footer from './Footer'
 
 
 export default function Contact() {
@@ -11,7 +11,7 @@ export default function Contact() {
 
     return (
         <>
-        <Header/>
+        {/* <Header/> */}
         <br></br>
         <div className="relative isolate px-6 pt-14 lg:px-8">
                 <div
@@ -151,8 +151,6 @@ export default function Contact() {
                     </div>
                 </form>
             </div>
-            <Footer/>
         </>
-
     )
 }

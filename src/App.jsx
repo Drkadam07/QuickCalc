@@ -1,28 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Hero from "./components/Hero";
-import { ToastContainer } from "react-toastify"; // Only import once
+import Home from "./components/Home";
+import { ToastContainer } from "react-toastify"; 
 import Contact from "./components/Contact";
+import Cardcover from "./components/Cardcover";
+
+
+import Layout from './components/Layout'; 
 
 
 function App() {
-
-    return (
-
-      <Router>
-        <div className="App">
-          <div className="auth-wrapper">
-            <div className="auth-inner">
-              <Routes>
-                <Route path="/" element={<Hero />} />
-                <Route path="/contact" element={<Contact  />} />
-                {/* <Route path="/Ai" element={<ImageGenerator  />} /> */}
-              </Routes>
-              <ToastContainer />
-            </div>
-          </div>
-        </div>
-      </Router>
-    );
-  }
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/tools" element={<Layout><Cardcover /></Layout>} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;

@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Tools', href: '#' },
+  { name: 'Tools', href: '/tools' },
   { name: 'Contact', href: '/contact' },
 ]
 
 export default function Header() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    return(
-        <div className="bg-white">
-<header className="absolute inset-x-10 top-5 z-50  bg-opacity-50 rounded-full shadow-lg">
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  return (
+    <div className="bg-white">
+      <header className="absolute inset-x-10 top-5 z-50  bg-opacity-50 rounded-full shadow-lg">
+        <nav aria-label="Global" className="flex items-center justify-between p-3 lg:px-8">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -83,13 +83,13 @@ export default function Header() {
                   ))}
                 </div>
                 <div className="py-6">
-                    {/* <Link to="/login" className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</Link> */}
+                  {/* <Link to="/login" className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</Link> */}
                 </div>
               </div>
             </div>
           </DialogPanel>
         </Dialog>
       </header>
-      </div>
-    )
+    </div>
+  )
 }

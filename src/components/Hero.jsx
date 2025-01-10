@@ -1,16 +1,11 @@
 'use client'
 
 
-import Header from "./Header"
-import Contact from "./Contact"
-import Cardcover from "./Cardcover"
 
 
 export default function Hero() {
     return (
         <div className="bg-white">
-            <Header />
-
             <div className="relative isolate px-6 pt-14 lg:px-8">
                 <div
                     aria-hidden="true"
@@ -67,9 +62,6 @@ export default function Hero() {
                     />
                 </div>
             </div>
-            <Cardcover/>
-            <Contact/>
-            
         </div>
 
     )

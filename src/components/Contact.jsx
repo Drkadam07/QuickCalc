@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { Field, Label, Switch } from '@headlessui/react'
-import Header from './Header'
+import Header from './Layout/Header'
 // import Footer from './Footer'
 
 
@@ -16,7 +16,7 @@ export default function Contact() {
         <div className="relative isolate px-6 pt-14 lg:px-8">
                 <div
                     aria-hidden="true"
-                    className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                    className="absolute inset-x-0 -top-10 -z-50 transform-gpu overflow-hidden blur-3xl sm:-top-50"
                 >
                     <div
                         style={{

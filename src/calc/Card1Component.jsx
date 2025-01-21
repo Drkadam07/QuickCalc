@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';  // Import toast from react-toastify
+import { toast } from 'react-toastify'; 
 
 const Card1Component = ({ input1, setInput1, input2, setInput2 }) => {
-  const [result, setResult] = useState(null); // State to hold the result of the calculation
+  const [result, setResult] = useState(null);
 
   const handleAddition = () => {
     const num1 = parseFloat(input1);
     const num2 = parseFloat(input2);
     if (!isNaN(num1) && !isNaN(num2)) {
       setResult(num1 + num2);
-      toast.success('Addition successful!'); // Toast message for success
+      toast.success('Addition successful!'); 
     } else {
-      toast.error('Please enter valid numbers'); // Toast message for error
+      toast.error('Please enter valid numbers'); 
       setResult(null);
     }
   };

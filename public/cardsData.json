@@ -1,6 +1,6 @@
 [
-    { "image": "https://picsum.photos/200", "title": "Arithmetic operators", "description": "To perform basic arithmetic operations like addition, subtraction, multiplication, and division on user inputs." },
-    { "image": "https://picsum.photos/200", "title": "Card 2", "description": "This is card 2" },
+    { "image": "/Cards/Arithmeticalop.jpg", "title": "Arithmetic operators", "description": "To perform basic arithmetic operations like addition, subtraction, multiplication, and division on user inputs." },
+    { "image": "/Cards/age.png", "title": "Age Calculator", "description": "Age Calculator is an easy-to-use tool that instantly calculates your exact age based on your birthdate" },
     { "image": "https://picsum.photos/200", "title": "Card 3", "description": "This is card 3" },
     { "image": "https://picsum.photos/200", "title": "Card 4", "description": "This is card 4" },
     { "image": "https://picsum.photos/200", "title": "Card 5", "description": "This is card 5" },

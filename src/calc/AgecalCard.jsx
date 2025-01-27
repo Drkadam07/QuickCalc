@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useTheme } from '../components/context/ThemeContext';
 
 const AgecalCard = ({ input1, setInput1, input2, setInput2 }) => {
@@ -11,7 +12,7 @@ const AgecalCard = ({ input1, setInput1, input2, setInput2 }) => {
     const currentDate = new Date(input2); // Current date from input2
 
     if (isNaN(birthDate.getTime()) || isNaN(currentDate.getTime())) {
-      alert('Please enter valid dates');
+      toast.error('Please Select valid dates');
       setResult(null);
       return;
     }

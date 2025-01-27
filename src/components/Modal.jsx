@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import Card1Component from '../calc/Card1Component';
-import Card2Component from '../calc/Card2Component';
+import { useTheme } from './context/ThemeContext'; // Assuming you're using a ThemeContext
+import Card1Component from '../calc/Arithmetic';
+import Card2Component from '../calc/AgecalCard';
 import Card3Component from '../calc/Card3Component';
 import Card4Component from '../calc/Card4Component';
 
 export default function Modal({ data, onClose }) {
+  const { theme } = useTheme();  // Access current theme from context
   const [input1, setInput1] = useState('');  // First input state
   const [input2, setInput2] = useState('');  // Second input state
 
@@ -13,7 +15,7 @@ export default function Modal({ data, onClose }) {
     switch (data.title) {
       case "Arithmetic operators":
         return <Card1Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
-      case "Card 2":
+      case "Age Calculator":
         return <Card2Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
       case "Card 3":
         return <Card3Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
@@ -25,11 +27,11 @@ export default function Modal({ data, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-8 w-full max-w-xl sm:max-w-md md:max-w-lg lg:max-w-xl relative">
+    <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 ${theme === 'dark' ? 'bg-gray-900' : 'bg-black'}`}>
+      <div className={`rounded-lg p-8 w-full max-w-xl sm:max-w-md md:max-w-lg lg:max-w-xl relative ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-xl font-bold text-gray-500 hover:text-gray-800"
+          className={`absolute top-2 right-2 text-xl font-bold ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-800'}`}
         >
           &times;
         </button>

@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear(); // Get the current year
 
   return (
-    <footer className="bg-gray-800 text-white p-6 mt-10">
+    <footer className="bg-gray-800 text-white p-10 mt-10">
       <div className="text-center mb-6">
         <p>&copy; {currentYear} Your Company. All rights reserved.</p>
       </div>

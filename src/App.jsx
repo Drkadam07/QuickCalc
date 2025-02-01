@@ -15,8 +15,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Layout><Contact /></Layout>} />
-          <Route path="/tools" element={<Layout><Cardcover /></Layout>} />
+          <Route path="contact" element={<Layout><Contact /></Layout>} />
+          <Route path="tools" element={<Layout><Cardcover /></Layout>} />
+          <Route path="*" element={<Layout></Layout>} />
         </Routes>
         <ToastContainer />
       </Router>

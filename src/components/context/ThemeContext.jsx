@@ -1,15 +1,13 @@
 // src/context/ThemeContext.js
 import React, { createContext, useState, useEffect, useContext } from 'react';
 
-// Define the context
 const ThemeContext = createContext();
 
-// Define the provider for the context
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('system');
+  const savedTheme = localStorage.getItem('theme') || 'system';
+  const [theme, setTheme] = useState(savedTheme);
 
   useEffect(() => {
-    // Set theme on mount based on system preference
     if (theme === 'system') {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       setTheme(prefersDark ? 'dark' : 'light');
@@ -17,7 +15,8 @@ export const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   useEffect(() => {
-    // Apply the theme to the document body class
+    localStorage.setItem('theme', theme);
+
     if (theme === 'dark') {
       document.body.classList.add('dark');
       document.body.classList.remove('light');

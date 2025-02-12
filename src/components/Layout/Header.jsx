@@ -1,19 +1,18 @@
 import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-// import { Link } from 'react-router-dom';
-import ThemeToggle from '../ThemeToggle'; // Import the ThemeToggle component
-import { useTheme } from '../context/ThemeContext'; // Assuming you're using a ThemeContext
+import ThemeToggle from '../ThemeToggle';
+import { useTheme } from '../context/ThemeContext';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Tools', href: '/tools' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Tools', href: '#tools' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme } = useTheme(); // Access the current theme from the context
+  const { theme } = useTheme();
 
   return (
     <div className={theme === 'dark' ? 'bg-gray-900' : 'bg-white'}>
@@ -47,18 +46,22 @@ export default function Header() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <ThemeToggle /> {/* Add the ThemeToggle component here */}
+            <ThemeToggle />
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
           <div className="fixed inset-0 z-50" />
+          
           <DialogPanel className={` fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
             <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-  <span className="sr-only">Your Company</span>
-  <img alt="Company Logo" src="/Quickfinal.png" className="h-16 w-auto" />
-</a>
-
+            <div className="py-6 text-center">
+                  <ThemeToggle />
+                </div>
+              <a href="#" className="-m-1.5 p-1.5">
+                <span className="sr-only">Your Company</span>
+                <img alt="Company Logo" src="/Quickfinal.png" className="h-16 w-auto" />
+              </a>
+              
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -80,10 +83,6 @@ export default function Header() {
                       {item.name}
                     </a>
                   ))}
-                </div>
-                <div className="py-6 text-center">
-                  {/* Add theme switcher here if needed */}
-                  <ThemeToggle />
                 </div>
               </div>
             </div>

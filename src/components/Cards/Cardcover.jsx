@@ -1,21 +1,20 @@
 import { useState, useEffect } from 'react';
-import { FaSearch } from 'react-icons/fa'; // Import the search icon from react-icons
+import { FaSearch } from 'react-icons/fa'; 
 import Card from './Card';
-import Modal from '../Modal'; // Import Modal component
-import { useTheme } from '../context/ThemeContext'; // Import the useTheme hook
+import Modal from '../Modal'; 
+import { useTheme } from '../context/ThemeContext'; 
 
 const Cardcover = () => {
-    const { theme } = useTheme(); // Get the current theme
+    const { theme } = useTheme(); 
     const [cardsData, setCardsData] = useState([]);
     const [showAll, setShowAll] = useState(false);
-    const [modalData, setModalData] = useState(null); // State to store data for the modal
-    const [showModal, setShowModal] = useState(false); // State to control modal visibility
-    const [searchTerm, setSearchTerm] = useState(""); // State to store the search input
+    const [modalData, setModalData] = useState(null); 
+    const [showModal, setShowModal] = useState(false); 
+    const [searchTerm, setSearchTerm] = useState(""); 
 
-    // Fetch card data from the JSON file
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('/cardsData.json'); // Fetch JSON file from public directory
+            const response = await fetch('/cardsData.json'); 
             const data = await response.json();
             setCardsData(data);
         };
@@ -36,19 +35,16 @@ const Cardcover = () => {
         setShowModal(false);
         setModalData(null);
     };
-
-    // Filter cards based on the search term
     const filteredCards = cardsData.filter((card) =>
         card.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (
         <>
-            <div
+            <div id='tools'
                 className={`flex flex-col items-center w-full px-6 py-6 mt-20 p-[60px] relative bg-gradient-to-r ${theme === 'light' ? 'from-indigo-100 via-pink-100 to-teal-100' : 'from-gray-800 via-gray-700 to-gray-900'}`}
                 style={{ background: theme === 'light' ? "linear-gradient(to top, rgba(75, 85, 99, 0), rgba(149, 238, 224, 0.5), rgba(20, 184, 166, 0))" : "linear-gradient(to top, rgba(50, 50, 50, 0), rgba(150, 150, 150, 0.5), rgba(30, 30, 30, 0))" }}
             >
-                {/* Search Bar */}
                 <div className={`relative w-full sm:w-96 mb-6 pb-4 ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
                     <div className="relative flex items-center">
                         <FaSearch
@@ -68,23 +64,19 @@ const Cardcover = () => {
 
 
 
-                {/* Display "Sorry" message if no cards found */}
                 {filteredCards.length === 0 && searchTerm && (
                     <div className={`text-xl mt-6 ${theme === 'light' ? 'text-gray-500' : 'text-gray-300'}`}>
                         <p>Sorry, no cards found.</p>
                     </div>
                 )}
-
-                {/* Display Cards */}
-                {/* Display Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full lg:pl-16">
                     {filteredCards.slice(0, showAll ? filteredCards.length : 6).map((card, index) => (
                         <Card
                             key={index}
                             image={card.image}
                             title={card.title}
-                            onCardClick={() => openModal(card)} // Handle card click to open modal
-                            onButtonClick={() => openModal(card)} // Handle "Calculate" button click to open modal
+                            onCardClick={() => openModal(card)}
+                            onButtonClick={() => openModal(card)} 
                         />
                     ))}
                 </div>
@@ -108,7 +100,6 @@ const Cardcover = () => {
                 )}
             </div>
 
-            {/* Show the modal if showModal is true */}
             {showModal && modalData && (
                 <Modal data={modalData} onClose={closeModal} />
             )}

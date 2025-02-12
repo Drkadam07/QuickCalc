@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
-#root {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-/* Global styles in your CSS file (e.g., index.css or global.css) */
 body {
   transition: background-color 0.3s, color 0.3s;
 }
@@ -22,18 +16,3 @@ body.dark {
   color: #ffffff;
 }
 
-/* For larger devices (desktops and tablets), adjust as necessary */
-@media (min-width: 768px) {
-  #root {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-/* For smaller devices (mobile phones), adjust the padding */
-@media (max-width: 767px) {
-  #root {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}

@@ -28,7 +28,7 @@ export default function Hero() {
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
-                                href="/"
+                                href="/tools"
                                 className={`px-6 py-3 rounded-full focus:outline-none text-white hover:opacity-80`}
                                 style={{
                                     background: 'linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E)',

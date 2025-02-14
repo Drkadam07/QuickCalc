@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
-import { useTheme } from './context/ThemeContext'; // Assuming you're using a ThemeContext
+import { useTheme } from './context/ThemeContext'; 
 import Card1Component from '../calc/Arithmetic';
 import Card2Component from '../calc/AgecalCard';
-import Card3Component from '../calc/Card3Component';
 import Card4Component from '../calc/Card4Component';
+import Areaogsquare from '../calc/Areaogsquare';
+import AreaofRectangle from '../calc/AreaofRectangle';
 
 export default function Modal({ data, onClose }) {
-  const { theme } = useTheme();  // Access current theme from context
-  const [input1, setInput1] = useState('');  // First input state
-  const [input2, setInput2] = useState('');  // Second input state
+  const { theme } = useTheme();
+  const [input1, setInput1] = useState('');  
+  const [input2, setInput2] = useState('');  
 
-  // Function to render the correct card component based on the title
   const getCardComponent = () => {
     switch (data.title) {
       case "Arithmetic operators":
         return <Card1Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
       case "Age Calculator":
         return <Card2Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
-      case "Card 3":
-        return <Card3Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
+      case "Area of a Rectangle":
+        return <AreaofRectangle input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2}/>;
       case "Card 4":
         return <Card4Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
+        case "Area of a Square":
+          return <Areaogsquare input1={input1} setInput1={setInput1} />;
       default:
         return null;
     }

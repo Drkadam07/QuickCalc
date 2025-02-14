@@ -3,13 +3,12 @@ import { toast } from 'react-toastify';
 import { useTheme } from '../components/context/ThemeContext';
 
 const AgecalCard = ({ input1, setInput1, input2, setInput2 }) => {
-  const [result, setResult] = useState(null); // State to hold the result of calculation
+  const [result, setResult] = useState(null); 
   const { theme } = useTheme();
 
   const handleCalculationWithResult = () => {
-    // Parse the dates from input fields
-    const birthDate = new Date(input1); // Birthdate from input1
-    const currentDate = new Date(input2); // Current date from input2
+    const birthDate = new Date(input1); 
+    const currentDate = new Date(input2);
 
     if (isNaN(birthDate.getTime()) || isNaN(currentDate.getTime())) {
       toast.error('Please Select valid dates');
@@ -17,12 +16,10 @@ const AgecalCard = ({ input1, setInput1, input2, setInput2 }) => {
       return;
     }
 
-    // Calculate the difference in years, months, and days
     let years = currentDate.getFullYear() - birthDate.getFullYear();
     let months = currentDate.getMonth() - birthDate.getMonth();
     let days = currentDate.getDate() - birthDate.getDate();
 
-    // Adjust for negative months or days
     if (months < 0) {
       months += 12;
       years--;
@@ -34,7 +31,6 @@ const AgecalCard = ({ input1, setInput1, input2, setInput2 }) => {
       months--;
     }
 
-    // Set the result as years, months, and days
     setResult({ years, months, days });
   };
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext'; // Import the useTheme hook
+import { useTheme } from '../context/ThemeContext';
 
 export default function Card({ image, title, onCardClick, onButtonClick }) {
-  const { theme } = useTheme(); // Get the current theme
+  const { theme } = useTheme();
 
   return (
     <div
@@ -16,24 +16,22 @@ export default function Card({ image, title, onCardClick, onButtonClick }) {
           {title}
         </h2>
       </div>
-
       <div className="px-6 pb-4 flex justify-center">
-  <button
-    onClick={(e) => {
-      e.stopPropagation(); 
-      onButtonClick();
-    }}
-    className={`px-6 py-3 rounded-full focus:outline-none text-white hover:opacity-80`}
-    style={{
-      background: 'linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E)',
-      transition: 'background 0.3s ease', // Adds smooth transition for hover effects
-    }}
-  >
-    Calculate
-  </button>
-</div>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onButtonClick();
+          }}
+          className={`px-6 py-3 rounded-full focus:outline-none text-white hover:opacity-80`}
+          style={{
+            background: 'linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E)',
+            transition: 'background 0.3s ease',
+          }}
+        >
+          Calculate
+        </button>
+      </div>
 
-      {/* Glowing Effect on Hover */}
       <style jsx>{`
         .max-w-sm:hover {
           box-shadow: 0 0 15px ${theme === 'light' ? 'rgba(59, 130, 246, 0.8)' : 'rgba(255, 105, 180, 0.8)'};

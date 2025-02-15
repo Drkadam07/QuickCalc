@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useTheme } from './context/ThemeContext'; 
 import Card1Component from '../calc/Arithmetic';
 import Card2Component from '../calc/AgecalCard';
-import Card4Component from '../calc/Card4Component';
 import Areaogsquare from '../calc/Areaogsquare';
 import AreaofRectangle from '../calc/AreaofRectangle';
+import AreaofCircle from '../calc/AreaofCircle';
 
 export default function Modal({ data, onClose }) {
   const { theme } = useTheme();
@@ -19,8 +19,8 @@ export default function Modal({ data, onClose }) {
         return <Card2Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
       case "Area of a Rectangle":
         return <AreaofRectangle input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2}/>;
-      case "Card 4":
-        return <Card4Component input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} />;
+      case "Area of a Circle":
+        return <AreaofCircle />;
         case "Area of a Square":
           return <Areaogsquare input1={input1} setInput1={setInput1} />;
       default:

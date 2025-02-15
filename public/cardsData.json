@@ -2,7 +2,7 @@
     { "image": "/Cards/Arithmeticalop.jpg", "title": "Arithmetic operators", "description": "To perform basic arithmetic operations like addition, subtraction, multiplication, and division on user inputs." },
     { "image": "/Cards/age.png", "title": "Age Calculator", "description": "Age Calculator is an easy-to-use tool that instantly calculates your exact age based on your birthdate" },
     { "image": "/Cards/Areaofrectangle.png", "title": "Area of a Rectangle", "description": "Area of a Rectangle" },
-    { "image": "https://picsum.photos/200", "title": "Card 4", "description": "This is card 4" },
+    { "image": "/Cards/Areaofcircle.png", "title": "Area of a Circle", "description": "Area of a Circle" },
     { "image": "/Cards/Areaofsquare.png", "title": "Area of a Square", "description": "Area of a Square" },
     { "image": "https://picsum.photos/200", "title": "Card 6", "description": "This is card 6" },
     { "image": "https://picsum.photos/200", "title": "Card 7", "description": "This is card 7" },
